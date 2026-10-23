@@ -1,32 +1,22 @@
-# React + TypeScript + Vite
+# Notes
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A minimal notes app: add text widgets, type, and they persist. Each widget is independent — text is never shared between them, and every save is debounced ~2s before hitting the API.
 
-Currently, two official plugins are available:
+Built with React, TypeScript, React Query, and Vite.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+# Development
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+## Building
+Follow the commands below in order to produce a development build
+```bash
+npm install
+npx msw init public/ --save   # once — drops the service worker script into public/
+npm run build
 ```
+Skip `msw` should you wish to opt for a production build instead
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+## Testing
+A very brief testing framework is set up at `src/mocks` which should not require an API
+```bash
+npx vitest
+```

@@ -13,7 +13,6 @@ type EphemeralNote = {
 };
 
 export default function App() {
-  const queryClient = useQueryClient();
   const { data: widgets = [], isLoading } = useQuery({
     queryKey: WIDGETS_KEY,
     queryFn: fetchWidgets,
