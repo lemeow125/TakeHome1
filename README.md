@@ -15,14 +15,15 @@ Follow the commands below in order to produce a development build:
 cd api
 uv sync
 uvicorn app:app --reload --port 8000
+```
 
 ## TODO
-- [] Containerization
-- [] Drone/Woodpecker pipeline
-  - [] Test (FE)
-  - [] Test (BE)
-  - [] Build
-  - [] Push to CR (Forgejo)
-  - [] Deploy dev
-  - [] Uptime/Status Tracker
-  - [] Backup job entry
+- [ ] Containerization
+- [ ] Drone/Woodpecker pipeline
+  - [ ] Test (FE)
+  - [ ] Test (BE)
+  - [ ] Build
+  - [ ] Push to CR (Forgejo)
+  - [ ] Deploy dev
+  - [ ] Uptime/Status Tracker
+  - [ ] Backup job entry
