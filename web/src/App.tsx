@@ -4,7 +4,7 @@ import { Button, Container, TextInput } from "./components";
 import { createWidget, deleteWidget, fetchWidgets, updateWidget } from "./api";
 import type { Widget } from "./types";
 
-const SAVE_DEBOUNCE_MS = 2000;
+const SAVE_DEBOUNCE_MS = import.meta.env.VITEST ? 50 : 2000;
 const WIDGETS_KEY = ["widgets"] as const;
 
 type EphemeralNote = {
