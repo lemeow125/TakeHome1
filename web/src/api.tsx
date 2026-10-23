@@ -1,6 +1,6 @@
 import type { CreateWidgetInput, UpdateWidgetInput, Widget } from "./types";
 
-const API_BASE = "/api";
+const API_BASE = "http://localhost:8000/api";
 
 async function request<T>(path: string, init?: RequestInit): Promise<T> {
     const res = await fetch(`${API_BASE}${path}`, {
